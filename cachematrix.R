@@ -1,11 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Calculates the inverse of a square (invertible) matrix and cache the result.
 
-## Creates a special vector, which is actually a list, with functions to:
-# 1) set the values of a matrix (provided there is a change)
-# 2) get the values of a matrix
-# 3) set the inverse
-# 4) get the inverse
+
+## CONTAINER FUNCTION for the matrix and its inverse with functions to get and
+## set the  matrix, and store and retrieve its inverse. If the matrix changes,
+## the cached inverse is cleared to stay up to date.
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
@@ -30,7 +28,8 @@ makeCacheMatrix <- function(x = matrix()) {
   )
 }
 
-## Calculates the inverse of the special "matrix" created with makeCacheMatrix
+## OPERATOR FUNCTION that retrieves the cached inverse from the container, 
+## if available. If no cache exists, it calculates the inverse and caches it.
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
